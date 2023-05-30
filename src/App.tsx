@@ -54,21 +54,17 @@ function App(){
     }
 
     const onSelectPerson = (person) => setLeader(person);
- //   const onSelectPizza = (pizza) => addPizzaToMessage(pizza);
-        // Hier moet in TweetForm de message worden aangepast;
-        // Daarvoor moeten de states uit TweetForm hier naar de app toe
-        // En worden meegegeven aan het component
 
     return <div className="App">
         <ListGroup header='Wie tweet er:' items={docenten} onSelectItem={setTweeter}/>
         <ListGroup header='Kies je pizza:' items={pizzas} onSelectItem={addPizzaToMessage}/>
-        <TweetForm onSubmit={onSubmit} onSelect={onSelectPerson}
+        <TweetForm onSubmit={onSubmit}
                    name={name} message={message}
                    changeName={changeName} changeMessage={changeMessage}/>
 
     <section id="mijnSectie">
         <TweetList tweets={tweets} leader={leader}/>
-        <LeaderBoard tweets={tweets} />
+        <LeaderBoard tweets={tweets} onSelect={onSelectPerson}/>
 
     </section>
     </div>;

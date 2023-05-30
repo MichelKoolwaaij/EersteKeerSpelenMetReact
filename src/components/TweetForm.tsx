@@ -1,5 +1,3 @@
-import {useState} from "react";
-
 function TweetForm(props){
 
     return <form  id="tweetForm" onSubmit={(e) => props.onSubmit(e)}>
